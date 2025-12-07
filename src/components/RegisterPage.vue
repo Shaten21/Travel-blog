@@ -95,10 +95,11 @@ const onSubmit = async () => {
   try {
     const success = await registerStore.register()
     if (success) {
-      router.push('/profile')
+      router.push('/login')
     }
   } catch (error) {
     console.error('Registration error:', error)
+    registerStore.errors.general = 'Произошла ошибка при регистрации. Пожалуйста, попробуйте снова.'
   }
 }
 </script>
